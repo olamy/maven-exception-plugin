@@ -16,7 +16,7 @@
   <url>http://www.example.com</url>
 
   <prerequisites>
-    <maven>${maven.version}</maven>
+    <maven>2.0</maven>
   </prerequisites>
 
   <properties>
