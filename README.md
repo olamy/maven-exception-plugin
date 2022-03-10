@@ -19,7 +19,7 @@ mvn org.apache.maven.test:maven-exception-plugin:1.0-SNAPSHOT:throw -e -DthrowFa
 mvn org.apache.maven.test:maven-exception-plugin:1.0-SNAPSHOT:throw -e
 ```
 
-they both have the same result and output when run with Maven 3:
+they both have the same result and output when run with Maven 3 (with different Help links: http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException vs http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException):
 
 one says 
 ```shell
@@ -31,6 +31,10 @@ one says
 [INFO] Finished at: 2022-03-10T13:06:09+10:00
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.test:maven-exception-plugin:1.0-SNAPSHOT:throw (default-cli) on project maven-exception-plugin: it's a MojoFailureException -> [Help 1]
+...
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+
 ```
 the one says 
 ```shell
@@ -43,6 +47,9 @@ the one says
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.test:maven-exception-plugin:1.0-SNAPSHOT:throw (default-cli) on project maven-exception-plugin: it's a MojoExecutionException -> [Help 1]
 org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.apache.maven.test:maven-exception-plugin:1.0-SNAPSHOT:throw (default-cli) on project maven-exception-plugin: it's a MojoExecutionException
+...
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
 ```
 
 But with Maven 2, the difference is shown:
